@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniela Malqui — Keynote Speaker & AI Facilitator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1a2e1a;
+    --forest-mid: #2d4a2d;
+    --forest-light: #3d6b3d;
+    --plum: #5b3a7e;
+    --plum-light: #7c52a8;
+    --cream: #f5f0e8;
+    --warm-white: #faf8f4;
+    --text-dark: #1a1a1a;
+    --text-mid: #444;
+    --text-light: #777;
+    --border: rgba(26,46,26,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--forest); text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+  .nav-links a {
+    font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-mid); text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--forest); }
+  .nav-cta {
+    background: var(--forest); color: white !important;
+    padding: 0.6rem 1.4rem; border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--plum) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    background: var(--forest);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(91,58,126,0.25) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-text {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 4rem 6rem 8rem;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); margin-bottom: 1.5rem;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300; line-height: 1.05;
+    color: white; margin-bottom: 1.8rem;
+  }
+  .hero-title em { font-style: italic; color: rgba(255,255,255,0.7); }
+  .hero-sub {
+    font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.65);
+    max-width: 480px; margin-bottom: 3rem;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: white; color: var(--forest);
+    padding: 0.85rem 2rem; border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-primary:hover { background: var(--cream); }
+  .btn-outline {
+    background: transparent; color: white;
+    padding: 0.85rem 2rem; border: 1px solid rgba(255,255,255,0.4);
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; border-radius: 2px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); }
+  .hero-image {
+    position: relative; overflow: hidden;
+  }
+  .hero-image img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top center;
+    opacity: 0.85;
+  }
+  .hero-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, var(--forest) 0%, transparent 30%);
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--forest-mid);
+    display: flex; justify-content: center; gap: 0;
+  }
+  .stat-item {
+    padding: 2rem 3.5rem; text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    flex: 1; max-width: 220px;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 300; color: white; display: block;
+  }
+  .stat-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+
+  /* ── SECTION UTILS ── */
+  section { padding: 6rem 0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
+  .section-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--plum); margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300; line-height: 1.15; color: var(--forest);
+    margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; }
+  .section-body { font-size: 1rem; line-height: 1.8; color: var(--text-mid); max-width: 580px; }
+  hr.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    background: var(--plum); overflow: hidden; padding: 1.1rem 0;
+  }
+  .marquee-track {
+    display: flex; gap: 4rem; width: max-content;
+    animation: marquee 30s linear infinite;
+    font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+  .marquee-track span { white-space: nowrap; }
+  .marquee-track .dot { color: rgba(255,255,255,0.3); }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── KEYNOTE ── */
+  .keynote-section { background: var(--cream); }
+  .keynote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .keynote-image { border-radius: 2px; overflow: hidden; aspect-ratio: 4/5; }
+  .keynote-image img { width: 100%; height: 100%; object-fit: cover; }
+  .keynote-tag {
+    display: inline-block; background: var(--forest); color: white;
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 0.35rem 0.8rem; margin-bottom: 1.5rem; border-radius: 2px;
+  }
+  .keynote-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+    font-weight: 400; font-style: italic; line-height: 1.2;
+    color: var(--forest); margin-bottom: 1.5rem;
+  }
+  .keynote-body { font-size: 0.95rem; line-height: 1.85; color: var(--text-mid); margin-bottom: 2rem; }
+  .outcomes { list-style: none; margin-bottom: 2.5rem; }
+  .outcomes li {
+    padding: 0.7rem 0; border-bottom: 1px solid var(--border);
+    font-size: 0.9rem; color: var(--text-mid); line-height: 1.6;
+    padding-left: 1.2rem; position: relative;
+  }
+  .outcomes li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--plum); font-size: 0.8rem;
+  }
+
+  /* ── WORKSHOP ── */
+  .workshop-section { background: var(--warm-white); }
+  .workshop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .workshop-content { order: 1; }
+  .workshop-image { order: 2; border-radius: 2px; overflow: hidden; aspect-ratio: 4/5; }
+  .workshop-image img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section { background: var(--forest); }
+  .testimonials-section .section-title { color: white; }
+  .testimonials-section .section-eyebrow { color: rgba(255,255,255,0.4); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .testimonial-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 2rem; border-radius: 2px;
+  }
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-style: italic; line-height: 1.7;
+    color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;
+  }
+  .testimonial-quote::before { content: '"'; color: var(--plum-light); font-size: 1.5rem; }
+  .testimonial-name { font-size: 0.8rem; font-weight: 500; color: white; }
+  .testimonial-role { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
+
+  /* ── FEATURED IN ── */
+  .featured-section { background: var(--cream); }
+  .featured-grid {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .featured-card {
+    border: 1px solid var(--border); padding: 1.2rem 1.8rem;
+    border-radius: 2px; text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    flex: 1; min-width: 200px;
+  }
+  .featured-card:hover { border-color: var(--forest); box-shadow: 0 2px 12px rgba(26,46,26,0.08); }
+  .featured-outlet {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--plum); margin-bottom: 0.4rem;
+  }
+  .featured-title { font-size: 0.88rem; color: var(--text-dark); line-height: 1.4; }
+
+  /* ── SPEAKING ── */
+  .speaking-section { background: var(--warm-white); }
+  .events-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 3rem; background: var(--border); }
+  .event-item {
+    background: var(--warm-white); padding: 1.5rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .event-name { font-size: 0.9rem; font-weight: 500; color: var(--text-dark); }
+  .event-location { font-size: 0.8rem; color: var(--text-light); margin-top: 0.2rem; }
+  .event-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--plum); font-style: italic;
+  }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--forest); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: center; }
+  .about-image { border-radius: 2px; overflow: hidden; aspect-ratio: 3/4; }
+  .about-image img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .about-section .section-title { color: white; }
+  .about-body { font-size: 1rem; line-height: 1.85; color: rgba(255,255,255,0.65); margin-bottom: 2rem; }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+  .tag {
+    background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6);
+    font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.4rem 0.9rem; border-radius: 2px;
+  }
+
+  /* ── BLOG ── */
+  .blog-section { background: var(--cream); }
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+  .blog-card { background: white; border-radius: 2px; overflow: hidden; text-decoration: none; transition: box-shadow 0.2s; }
+  .blog-card:hover { box-shadow: 0 8px 30px rgba(26,46,26,0.1); }
+  .blog-img { aspect-ratio: 16/9; overflow: hidden; }
+  .blog-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .blog-card:hover .blog-img img { transform: scale(1.04); }
+  .blog-content { padding: 1.5rem; }
+  .blog-date { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.5rem; }
+  .blog-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--forest); line-height: 1.3; }
+  #blog-container .loading { color: var(--text-light); font-style: italic; font-size: 0.9rem; }
+
+  /* ── CTA STRIP ── */
+  .cta-strip {
+    background: var(--plum); padding: 5rem 0; text-align: center;
+  }
+  .cta-strip .section-title { color: white; margin: 0 auto 1.5rem; text-align: center; }
+  .cta-strip p { color: rgba(255,255,255,0.65); margin-bottom: 2.5rem; font-size: 1rem; }
+  .btn-white {
+    background: white; color: var(--plum);
+    padding: 1rem 2.5rem; border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; border-radius: 2px;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+  .btn-white:hover { background: var(--cream); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--forest); padding: 3rem 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: white; font-weight: 400;
+  }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.08em; }
+  .footer-links a:hover { color: white; }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 5rem 2rem 3rem; }
+    .hero-image { height: 50vw; }
+    .hero-image::after { background: linear-gradient(to bottom, var(--forest) 0%, transparent 30%); }
+    .keynote-grid, .workshop-grid, .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .workshop-image { order: -1; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .events-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .stats-bar { flex-wrap: wrap; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .container { padding: 0 1.5rem; }
+    .hero-text { padding: 5rem 1.5rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker" target="_blank" class="nav-logo">Daniela Malqui</a>
+  <div class="nav-links">
+    <a href="#keynote">Keynote</a>
+    <a href="#workshop">Workshop</a>
+    <a href="#speaking">Speaking</a>
+    <a href="#about">About</a>
+    <a href="#blog">Blog</a>
+    <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker" class="nav-cta">Book Daniela</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Keynote Speaker & AI Facilitator — LATAM & Global</p>
+    <h1 class="hero-title">
+      What's Left<br>for Humans When<br><em>Machines</em><br>Outperform Us?
+    </h1>
+    <p class="hero-sub">Daniela Malqui challenges leaders and teams to stop seeing AI as a threat — and start seeing it as the force that makes us more deeply human.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker" class="btn-primary">Book Daniela</a>
+      <a href="#keynote" class="btn-outline">See Keynote</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://drive.google.com/uc?export=view&id=1zvQofE3ZQKxX_JNzX-cKazKQDCEBFwRw" alt="Daniela Malqui">
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">5+</span>
+    <span class="stat-label">Years on Stage</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">1,200+</span>
+    <span class="stat-label">Professionals Trained</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">10+</span>
+    <span class="stat-label">Countries</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">6</span>
+    <span class="stat-label">Publications</span>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>ETH México</span><span class="dot">·</span>
+    <span>Devconnect Argentina</span><span class="dot">·</span>
+    <span>Labitconf</span><span class="dot">·</span>
+    <span>AWS Women Summit LATAM</span><span class="dot">·</span>
+    <span>INNOVaiTECH Ecuador</span><span class="dot">·</span>
+    <span>Foro Blockchain México</span><span class="dot">·</span>
+    <span>DCN AI for Prosperity</span><span class="dot">·</span>
+    <span>Talent Land Jalisco</span><span class="dot">·</span>
+    <span>Tulum Crypto Fest</span><span class="dot">·</span>
+    <span>ETH México</span><span class="dot">·</span>
+    <span>Devconnect Argentina</span><span class="dot">·</span>
+    <span>Labitconf</span><span class="dot">·</span>
+    <span>AWS Women Summit LATAM</span><span class="dot">·</span>
+    <span>INNOVaiTECH Ecuador</span><span class="dot">·</span>
+    <span>Foro Blockchain México</span><span class="dot">·</span>
+    <span>DCN AI for Prosperity</span><span class="dot">·</span>
+    <span>Talent Land Jalisco</span><span class="dot">·</span>
+    <span>Tulum Crypto Fest</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- KEYNOTE -->
+<section class="keynote-section" id="keynote">
+  <div class="container">
+    <div class="keynote-grid">
+      <div class="keynote-image">
+        <img src="https://drive.google.com/uc?export=view&id=1PSOZzKkVTfySnzQx3AGFBtKOh6-RsnXT" alt="Daniela Malqui">
+      </div>
+      <div>
+        <span class="keynote-tag">Signature Keynote</span>
+        <h2 class="keynote-title">The Augmented Human: What's Left for Humans When Machines Outperform Us?</h2>
+        <p class="keynote-body">Machines will surpass us in intelligence. Soon. So — what's left for us?<br><br>
+        This keynote starts from that uncomfortable question and challenges the way we think about AI, leadership, and human value. Daniela explores a dual approach to AI adoption — top-down and bottom-up — showing that sustainable transformation doesn't start with tools, but with mindset. Because people don't change because they are told to. They change when they have their own reasons to move.</p>
+        <ul class="outcomes">
+          <li>A clear realization that people are still the most valuable asset — and that AI won't replace those who have meaning and purpose in what they do.</li>
+          <li>A deeper understanding that leadership is about motivation — giving people real reasons to embrace AI.</li>
+          <li>A shift in perspective: seeing AI adoption not just as a technological challenge, but as a human and strategic one.</li>
+          <li>A practical understanding of the dual adoption model: when to use each approach, and how to make them work together.</li>
+        </ul>
+        <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker" class="btn-primary" style="display:inline-block;">Book This Keynote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WORKSHOP -->
+<section class="workshop-section" id="workshop">
+  <div class="container">
+    <div class="workshop-grid">
+      <div class="workshop-content">
+        <span class="keynote-tag" style="background:var(--plum);">Most Requested Workshop</span>
+        <h2 class="keynote-title">AI Generative Group Challenge:<br>Design, Create & Execute</h2>
+        <p class="keynote-body">Two hours. No prior training. Real tools. A product built from zero. One winning team.<br><br>
+        This is not a workshop — it's an experience. Participants are divided into teams and given a real challenge that must be solved using AI: fast, collaboratively, and without overthinking.</p>
+        <ul class="outcomes">
+          <li>Build a real AI-powered solution in under one hour.</li>
+          <li>Experience how to collaborate effectively under pressure and uncertainty.</li>
+          <li>Develop practical understanding of multiple AI tools without prior knowledge.</li>
+          <li>Gain confidence to start using AI immediately in real-world scenarios.</li>
+        </ul>
+        <p style="font-size:0.82rem;color:var(--text-light);margin-bottom:2rem;">Delivered across Argentina, Peru, Mexico, and online.</p>
+        <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker" class="btn-primary" style="display:inline-block;background:var(--plum);color:white;">Book This Workshop</a>
+      </div>
+      <div class="workshop-image">
+        <img src="https://drive.google.com/uc?export=view&id=1rKn6pTV_py5EZa-fUhdOk1X5itWRy5MR" alt="Workshop en acción">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- GALLERY -->
+<section style="background:var(--warm-white);padding:2rem 0 1rem;">
+  <div class="container">
+    <p class="section-eyebrow">In Action</p>
+    <h2 class="section-title">On Stage &<br><em>In the Room</em></h2>
+    <div id="gallery-container" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:2rem;">
+      <div class="gallery-item" style="aspect-ratio:4/3;overflow:hidden;border-radius:2px;">
+        <img src="https://drive.google.com/uc?export=view&id=1TT9Xw5_YdpA3Xj-wKSYV9bgiyl_OIug3" alt="Talent Land México" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div class="gallery-item" style="aspect-ratio:4/3;overflow:hidden;border-radius:2px;">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Foro Blockchain 2025" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div class="gallery-item" style="aspect-ratio:4/3;overflow:hidden;border-radius:2px;">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Workshop DCN Argentina" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div class="gallery-item" style="aspect-ratio:4/3;overflow:hidden;border-radius:2px;">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="ADE Argentina" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div class="gallery-item" style="aspect-ratio:4/3;overflow:hidden;border-radius:2px;">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Tech Week México 2026" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <!-- Dynamic images from Sheet load here -->
+      <div id="gallery-dynamic"></div>
+    </div>
+  </div>
+</section>
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <p class="section-eyebrow">What People Say</p>
+    <h2 class="section-title" style="color:white;">Words From<br><em>the Room</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-quote">I had the pleasure of working with Daniela at AI for Prosperity. Participants left with practical, successful tools — a clear reflection of her expertise and energy. Highly recommend her as a facilitator who delivers impact.</p>
+        <p class="testimonial-name">Marianna Tanagia</p>
+        <p class="testimonial-role">Communications Director, DCN. August 2025</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">Working with Daniela is inspiring. She connects strategy with execution and has strong expertise in digital and AI. Her training for my team of 30+ people was a turning point — a before and after.</p>
+        <p class="testimonial-name">Ysabel Revilla Tirado</p>
+        <p class="testimonial-role">General Manager, Preciso. November 2025</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">Daniela is a great facilitator and speaker, providing valuable insights on leadership and team management. She always asks the right questions to lead us to valuable reflections.</p>
+        <p class="testimonial-name">Mariana Costa Checa</p>
+        <p class="testimonial-role">Co-Founder, Laboratoria+. August 2024</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">Daniela understands people across all cultures and functions, bringing teams together to achieve common goals. She was key to leading all strategic projects — from launch to IPO.</p>
+        <p class="testimonial-name">Shirly Kalush</p>
+        <p class="testimonial-role">CSO, GoTo Global. February 2023</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">I attended Daniela's AI workshop and found it very useful. She explained the tools in a clear and simple way, and I left with practical ideas I can use in my work immediately.</p>
+        <p class="testimonial-name">Dalia Noiman</p>
+        <p class="testimonial-role">AI Workshop Participant. February 2026</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">Daniela destaca por su capacidad para facilitar contenidos de innovación e IA de manera clara, práctica y cercana. No se queda en la teoría — logra traducir conceptos complejos en herramientas aplicables. Tiene presencia, estructura, calidez y una muy buena capacidad para guiar sesiones que generan participación real e interés genuino. La recomiendo plenamente para espacios académicos, corporativos y de comunidad.</p>
+        <p class="testimonial-name">Marco Mendieta</p>
+        <p class="testimonial-role">Founder & Director, Misión Ecuador Foundation. Chevening Scholar · Georgetown University · King's College London</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKING -->
+<section class="speaking-section" id="speaking">
+  <div class="container">
+    <p class="section-eyebrow">On Stage</p>
+    <h2 class="section-title">Speaking <em>Experience</em></h2>
+
+    <p style="font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--plum);margin:2.5rem 0 1rem;">IRL Conferences</p>
+    <div class="events-grid" id="events-container">
+      <div class="event-item">
+        <div><p class="event-name">AWSome Women Summit LATAM</p><p class="event-location">México · AWS</p></div>
+        <span class="event-year">2026</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">INNOVaiTECH — Speaker, Judge & Panelist</p><p class="event-location" style="color:var(--plum);font-style:italic;">The Augmented Human keynote</p><p class="event-location">Guayaquil, Ecuador</p></div>
+        <span class="event-year">2026</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">Devconnect — LATAM Builders</p><p class="event-location">Buenos Aires, Argentina</p></div>
+        <span class="event-year">2025</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">Foro Blockchain — Criptoemprendiendo</p><p class="event-location">México</p></div>
+        <span class="event-year">2025</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">DCN — AI for Prosperity</p><p class="event-location">Buenos Aires, Argentina</p></div>
+        <span class="event-year">2025</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">ETH México</p><p class="event-location">México</p></div>
+        <span class="event-year">2024</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">Tulum Crypto Fest — The Metaverse</p><p class="event-location">Tulum, México</p></div>
+        <span class="event-year">2023</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">Labitconf — Creadores en el Metaverso</p><p class="event-location">Argentina</p></div>
+        <span class="event-year">2023</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">Ethereum México — NFTs, POAPs, Attestations</p><p class="event-location">México</p></div>
+        <span class="event-year">2023</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">Talent Land — Metaverso, NFTs y tu negocio</p><p class="event-location">Jalisco, México</p></div>
+        <span class="event-year">2023</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">ADE — Web3, NFTs y Metaverso</p><p class="event-location">Santa Fe, Argentina</p></div>
+        <span class="event-year">2023</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">Bolsa de Comercio — Web3, NFTs y Metaverso</p><p class="event-location">Santa Fe, Argentina</p></div>
+        <span class="event-year">2023</span>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--plum);margin:2.5rem 0 1rem;">Online & Workshops</p>
+    <div class="events-grid">
+      <div class="event-item">
+        <div><p class="event-name">ChatGPT de cero a avanzado — Doing Minds</p><p class="event-location">Online · 120 participantes</p></div>
+        <span class="event-year">2025</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">AI for Productivity & Creativity — Misión Ecuador</p><p class="event-location">Online · 600 participantes</p></div>
+        <span class="event-year">2025</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">AI Media Lab — Google News Initiative</p><p class="event-location">Online · 217 periodistas · LATAM</p></div>
+        <span class="event-year">2025</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">Experta Talks — IA, CoherencIA & Liderazgo</p><p class="event-location">Online · LinkedIn Live</p></div>
+        <span class="event-year">2026</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">Mentor — Women in Web3, 1st Edition</p><p class="event-location">Online</p></div>
+        <span class="event-year">2023</span>
+      </div>
+      <div class="event-item">
+        <div><p class="event-name">WeDAO LATAM — Casos de uso NFTs</p><p class="event-location">Online</p></div>
+        <span class="event-year">2023</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Daniela Malqui">
+      </div>
+      <div>
+        <p class="section-eyebrow" style="color:rgba(255,255,255,0.35);">About</p>
+        <h2 class="section-title" style="color:white;"><em>Daniela</em> Malqui</h2>
+        <p class="about-body">Daniela Malqui is an international speaker, strategy and operations leader, and founder of Doing Minds — a firm focused on automation and applied AI to optimize processes and drive real execution.</p>
+        <p class="about-body">With over 13 years of experience and having lived and worked across five countries, she brings a truly global and grounded perspective shaped by working hands-on with teams, leaders, and organizations navigating change.</p>
+        <p class="about-body">Her keynote, <em>The Augmented Human</em>, starts with an uncomfortable but necessary question: what makes us truly human in a world where machines are becoming increasingly capable? Through a powerful and practical lens, Daniela introduces a dual approach to AI adoption — showing that real transformation doesn't start with tools, but with people who have a reason to move.</p>
+        <p class="about-body">She has spoken at AWSome Summit, INNOVaiTECH, Devconnect, DCN, Foro Blockchain, ETH México, Labitconf, Talent Land, and more — and has led immersive AI workshops across LATAM, training over 1,000 people in 2025. A hackathon winner and passionate educator, Daniela is recognized for turning complex ideas into experiences that shift mindset, spark action, and stay with people long after the talk ends.</p>
+        <p class="about-body">She speaks Spanish, English, and Hebrew, and is known for her ability to connect deeply with diverse audiences.</p>
+        <div class="about-tags">
+          <span class="tag">AI & Leadership</span>
+          <span class="tag">Web3</span>
+          <span class="tag">Operations</span>
+          <span class="tag">LATAM</span>
+          <span class="tag">Israel</span>
+          <span class="tag">English · Spanish · Hebrew</span>
+        </div>
+        <br>
+        <a href="https://linkedin.com/in/danielamalqui" target="_blank" class="btn-outline" style="display:inline-block;margin-top:1rem;">LinkedIn Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog-section" id="blog">
+  <div class="container">
+    <p class="section-eyebrow">Ideas & Insights</p>
+    <h2 class="section-title">From the <em>Blog</em></h2>
+    <div id="blog-container" class="blog-grid">
+      <p class="loading" style="grid-column:1/-1;color:var(--text-light);font-style:italic;">Loading posts…</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="container" style="text-align:center;">
+    <h2 class="section-title" style="color:white;text-align:center;margin:0 auto 1rem;">Ready to Bring<br><em>Daniela</em> to Your Event?</h2>
+    <p style="color:rgba(255,255,255,0.6);margin-bottom:2.5rem;font-size:1rem;">Available for keynotes, workshops, panels, and online events.</p>
+    <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker" class="btn-white">Book Daniela</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">Daniela Malqui</span>
+      <div class="footer-links">
+        <a href="#keynote">Keynote</a>
+        <a href="#workshop">Workshop</a>
+        <a href="#about">About</a>
+        <a href="#blog">Blog</a>
+        <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker">Contact</a>
+      </div>
+      <span class="footer-copy">© 2025 Daniela Malqui</span>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+// ── CONFIG ──────────────────────────────────────────────────────────────────
+const BLOG_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQhLatQotBivdV9l0_KmdGJUTVTS5xDeNY1dmQ61Ak0Q8dFkhSt9hNMD5TGa0HxlBHzdiba0ANKPjLF/pub?gid=0&single=true&output=csv";
+const EVENTS_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQhLatQotBivdV9l0_KmdGJUTVTS5xDeNY1dmQ61Ak0Q8dFkhSt9hNMD5TGa0HxlBHzdiba0ANKPjLF/pub?gid=97940204&single=true&output=csv";
+
+// ── CSV PARSER ───────────────────────────────────────────────────────────────
+function parseCSV(csv) {
+  const lines = csv.trim().split('\n');
+  const headers = lines[0].split(',').map(h => h.replace(/^"|"$/g, '').trim());
+  return lines.slice(1).filter(l => l.trim()).map(line => {
+    const cols = [];
+    let cur = '', inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      if (line[i] === '"') { inQ = !inQ; }
+      else if (line[i] === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+      else { cur += line[i]; }
+    }
+    cols.push(cur.trim());
+    const obj = {};
+    headers.forEach((h, i) => obj[h] = (cols[i] || '').replace(/^"|"$/g, '').trim());
+    return obj;
+  });
+}
+
+// ── BLOG ─────────────────────────────────────────────────────────────────────
+async function loadBlog() {
+  const container = document.getElementById('blog-container');
+  try {
+    const res = await fetch(BLOG_CSV);
+    const csv = await res.text();
+    const posts = parseCSV(csv).filter(p => p.titulo || p.title);
+    if (posts.length === 0) throw new Error('empty');
+    renderPosts(posts.slice(0, 3), container);
+  } catch(e) {
+    container.innerHTML = '<p style="color:var(--text-light);font-style:italic;grid-column:1/-1;">Próximamente — los primeros artículos están en camino.</p>';
+  }
+}
+
+function renderPosts(posts, container) {
+  const WA = 'https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker';
+  container.innerHTML = posts.map(p => {
+    const slug = p.slug || '';
+    const titulo = p.titulo || p.title || '';
+    const fecha = p.fecha || p.date || '';
+    const desc = p.descripcion || p.description || '';
+    const img = p.imagen_url || p.image_url || '';
+    const docUrl = p.doc_url || '';
+    const fallback = 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&q=70';
+    const href = docUrl ? `blog.html?doc=${encodeURIComponent(docUrl)}&slug=${slug}&titulo=${encodeURIComponent(titulo)}` : '#';
+    return `
+      <a href="${href}" class="blog-card">
+        <div class="blog-img">
+          <img src="${img || fallback}" alt="${titulo}" loading="lazy"
+            onerror="this.src='${fallback}'">
+        </div>
+        <div class="blog-content">
+          <p class="blog-date">${fecha}</p>
+          <h3 class="blog-title">${titulo}</h3>
+          <p style="font-size:0.85rem;color:var(--text-light);margin-top:0.5rem;line-height:1.5;">${desc}</p>
+        </div>
+      </a>
+    `;
+  }).join('');
+}
+
+// ── EVENTS ───────────────────────────────────────────────────────────────────
+async function loadEvents() {
+  const container = document.getElementById('events-container');
+  if (!container) return;
+  try {
+    const res = await fetch(EVENTS_CSV);
+    const csv = await res.text();
+    const events = parseCSV(csv).filter(e => e.nombre || e.name);
+    if (events.length === 0) throw new Error('empty');
+    container.innerHTML = events.map(e => {
+      const nombre = e.nombre || e.name || '';
+      const ubicacion = e.ubicacion || e.location || '';
+      const fecha = e.fecha || e.date || '';
+      const url = e.url || '';
+      return `
+        <div class="event-item">
+          <div>
+            <p class="event-name">${nombre}</p>
+            <p class="event-location">${ubicacion}</p>
+          </div>
+          <span class="event-year">${fecha}</span>
+        </div>
+      `;
+    }).join('');
+  } catch(e) {
+    if (container) container.innerHTML = '';
+  }
+}
+
+loadBlog();
+loadEvents();
+
+// ── GALLERY: load extra images from Sheet ────────────────────────────────────
+// Add a "fotos" tab to your Sheet with columns: imagen_url, alt
+const GALLERY_CSV = "ADD_GALLERY_SHEET_URL_HERE";
+async function loadGallery() {
+  if (GALLERY_CSV === "ADD_GALLERY_SHEET_URL_HERE") return;
+  try {
+    const res = await fetch(GALLERY_CSV);
+    const csv = await res.text();
+    const items = parseCSV(csv).filter(r => r.imagen_url);
+    const container = document.getElementById('gallery-dynamic');
+    if (!container || items.length === 0) return;
+    container.style.display = 'contents';
+    container.innerHTML = items.map(item => `
+      <div style="aspect-ratio:4/3;overflow:hidden;border-radius:2px;">
+        <img src="${item.imagen_url}" alt="${item.alt || ''}" loading="lazy"
+          style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;"
+          onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"
+          onerror="this.parentElement.style.display='none'">
+      </div>
+    `).join('');
+  } catch(e) {}
+}
+loadGallery();
+
+html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniela Malqui — Keynote Speaker & AI Facilitator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1a2e1a;
+    --forest-mid: #2d4a2d;
+    --forest-light: #3d6b3d;
+    --plum: #5b3a7e;
+    --plum-light: #7c52a8;
+    --cream: #f5f0e8;
+    --warm-white: #faf8f4;
+    --text-dark: #1a1a1a;
+    --text-mid: #444;
+    --text-light: #777;
+    --border: rgba(26,46,26,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--forest); text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+  .nav-links a {
+    font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-mid); text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--forest); }
+  .nav-cta {
+    background: var(--forest); color: white !important;
+    padding: 0.6rem 1.4rem; border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--plum) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    background: var(--forest);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(91,58,126,0.25) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-text {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 4rem 6rem 8rem;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); margin-bottom: 1.5rem;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300; line-height: 1.05;
+    color: white; margin-bottom: 1.8rem;
+  }
+  .hero-title em { font-style: italic; color: rgba(255,255,255,0.7); }
+  .hero-sub {
+    font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.65);
+    max-width: 480px; margin-bottom: 3rem;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: white; color: var(--forest);
+    padding: 0.85rem 2rem; border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-primary:hover { background: var(--cream); }
+  .btn-outline {
+    background: transparent; color: white;
+    padding: 0.85rem 2rem; border: 1px solid rgba(255,255,255,0.4);
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; border-radius: 2px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); }
+  .hero-image {
+    position: relative; overflow: hidden;
+  }
+  .hero-image img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top center;
+    opacity: 0.85;
+  }
+  .hero-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, var(--forest) 0%, transparent 30%);
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--forest-mid);
+    display: flex; justify-content: center; gap: 0;
+  }
+  .stat-item {
+    padding: 2rem 3.5rem; text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    flex: 1; max-width: 220px;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 300; color: white; display: block;
+  }
+  .stat-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+
+  /* ── SECTION UTILS ── */
+  section { padding: 6rem 0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
+  .section-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--plum); margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300; line-height: 1.15; color: var(--forest);
+    margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; }
+  .section-body { font-size: 1rem; line-height: 1.8; color: var(--text-mid); max-width: 580px; }
+  hr.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    background: var(--plum); overflow: hidden; padding: 1.1rem 0;
+  }
+  .marquee-track {
+    display: flex; gap: 4rem; width: max-content;
+    animation: marquee 30s linear infinite;
+    font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+  .marquee-track span { white-space: nowrap; }
+  .marquee-track .dot { color: rgba(255,255,255,0.3); }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── KEYNOTE ── */
+  .keynote-section { background: var(--cream); }
+  .keynote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .keynote-image { border-radius: 2px; overflow: hidden; aspect-ratio: 4/5; }
+  .keynote-image img { width: 100%; height: 100%; object-fit: cover; }
+  .keynote-tag {
+    display: inline-block; background: var(--forest); color: white;
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 0.35rem 0.8rem; margin-bottom: 1.5rem; border-radius: 2px;
+  }
+  .keynote-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+    font-weight: 400; font-style: italic; line-height: 1.2;
+    color: var(--forest); margin-bottom: 1.5rem;
+  }
+  .keynote-body { font-size: 0.95rem; line-height: 1.85; color: var(--text-mid); margin-bottom: 2rem; }
+  .outcomes { list-style: none; margin-bottom: 2.5rem; }
+  .outcomes li {
+    padding: 0.7rem 0; border-bottom: 1px solid var(--border);
+    font-size: 0.9rem; color: var(--text-mid); line-height: 1.6;
+    padding-left: 1.2rem; position: relative;
+  }
+  .outcomes li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--plum); font-size: 0.8rem;
+  }
+
+  /* ── WORKSHOP ── */
+  .workshop-section { background: var(--warm-white); }
+  .workshop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .workshop-content { order: 1; }
+  .workshop-image { order: 2; border-radius: 2px; overflow: hidden; aspect-ratio: 4/5; }
+  .workshop-image img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section { background: var(--forest); }
+  .testimonials-section .section-title { color: white; }
+  .testimonials-section .section-eyebrow { color: rgba(255,255,255,0.4); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .testimonial-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 2rem; border-radius: 2px;
+  }
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-style: italic; line-height: 1.7;
+    color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;
+  }
+  .testimonial-quote::before { content: '"'; color: var(--plum-light); font-size: 1.5rem; }
+  .testimonial-name { font-size: 0.8rem; font-weight: 500; color: white; }
+  .testimonial-role { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
+
+  /* ── FEATURED IN ── */
+  .featured-section { background: var(--cream); }
+  .featured-grid {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .featured-card {
+    border: 1px solid var(--border); padding: 1.2rem 1.8rem;
+    border-radius: 2px; text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    flex: 1; min-width: 200px;
+  }
+  .featured-card:hover { border-color: var(--forest); box-shadow: 0 2px 12px rgba(26,46,26,0.08); }
+  .featured-outlet {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--plum); margin-bottom: 0.4rem;
+  }
+  .featured-title { font-size: 0.88rem; color: var(--text-dark); line-height: 1.4; }
+
+  /* ── SPEAKING ── */
+  .speaking-section { background: var(--warm-white); }
+  .events-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 3rem; background: var(--border); }
+  .event-item {
+    background: var(--warm-white); padding: 1.5rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .event-name { font-size: 0.9rem; font-weight: 500; color: var(--text-dark); }
+  .event-location { font-size: 0.8rem; color: var(--text-light); margin-top: 0.2rem; }
+  .event-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--plum); font-style: italic;
+  }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--forest); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: center; }
+  .about-image { border-radius: 2px; overflow: hidden; aspect-ratio: 3/4; }
+  .about-image img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .about-section .section-title { color: white; }
+  .about-body { font-size: 1rem; line-height: 1.85; color: rgba(255,255,255,0.65); margin-bottom: 2rem; }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+  .tag {
+    background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6);
+    font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.4rem 0.9rem; border-radius: 2px;
+  }
+
+  /* ── BLOG ── */
+  .blog-section { background: var(--cream); }
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+  .blog-card { background: white; border-radius: 2px; overflow: hidden; text-decoration: none; transition: box-shadow 0.2s; }
+  .blog-card:hover { box-shadow: 0 8px 30px rgba(26,46,26,0.1); }
+  .blog-img { aspect-ratio: 16/9; overflow: hidden; }
+  .blog-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .blog-card:hover .blog-img img { transform: scale(1.04); }
+  .blog-content { padding: 1.5rem; }
+  .blog-date { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.5rem; }
+  .blog-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--forest); line-height: 1.3; }
+  #blog-container .loading { color: var(--text-light); font-style: italic; font-size: 0.9rem; }
+
+  /* ── CTA STRIP ── */
+  .cta-strip {
+    background: var(--plum); padding: 5rem 0; text-align: center;
+  }
+  .cta-strip .section-title { color: white; margin: 0 auto 1.5rem; text-align: center; }
+  .cta-strip p { color: rgba(255,255,255,0.65); margin-bottom: 2.5rem; font-size: 1rem; }
+  .btn-white {
+    background: white; color: var(--plum);
+    padding: 1rem 2.5rem; border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; border-radius: 2px;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+  .btn-white:hover { background: var(--cream); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--forest); padding: 3rem 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: white; font-weight: 400;
+  }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.08em; }
+  .footer-links a:hover { color: white; }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 5rem 2rem 3rem; }
+    .hero-image { height: 50vw; }
+    .hero-image::after { background: linear-gradient(to bottom, var(--forest) 0%, transparent 30%); }
+    .keynote-grid, .workshop-grid, .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .workshop-image { order: -1; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .events-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .stats-bar { flex-wrap: wrap; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .container { padding: 0 1.5rem; }
+    .hero-text { padding: 5rem 1.5rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker" target="_blank" class="nav-logo">Daniela Malqui</a>
+  <div class="nav-links">
+    <a href="#keynote">Keynote</a>
+    <a href="#workshop">Workshop</a>
+    <a href="#speaking">Speaking</a>
+    <a href="#about">About</a>
+    <a href="#blog">Blog</a>
+    <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker" class="nav-cta">Book Daniela</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Keynote Speaker & AI Facilitator — LATAM & Global</p>
+    <h1 class="hero-title">
+      What's Left<br>for Humans When<br><em>Machines</em><br>Outperform Us?
+    </h1>
+    <p class="hero-sub">Daniela Malqui challenges leaders and teams to stop seeing AI as a threat — and start seeing it as the force that makes us more deeply human.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker" class="btn-primary">Book Daniela</a>
+      <a href="#keynote" class="btn-outline">See Keynote</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Daniela Malqui">
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">5+</span>
+    <span class="stat-label">Years on Stage</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">1,200+</span>
+    <span class="stat-label">Professionals Trained</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">10+</span>
+    <span class="stat-label">Countries</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">6</span>
+    <span class="stat-label">Publications</span>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>ETH México</span><span class="dot">·</span>
+    <span>Devconnect Argentina</span><span class="dot">·</span>
+    <span>Labitconf</span><span class="dot">·</span>
+    <span>AWS Women Summit LATAM</span><span class="dot">·</span>
+    <span>INNOVaiTECH Ecuador</span><span class="dot">·</span>
+    <span>Foro Blockchain México</span><span class="dot">·</span>
+    <span>DCN AI for Prosperity</span><span class="dot">·</span>
+    <span>Talent Land Jalisco</span><span class="dot">·</span>
+    <span>Tulum Crypto Fest</span><span class="dot">·</span>
+    <span>ETH México</span><span class="dot">·</span>
+    <span>Devconnect Argentina</span><span class="dot">·</span>
+    <span>Labitconf</span><span class="dot">·</span>
+    <span>AWS Women Summit LATAM</span><span class="dot">·</span>
+    <span>INNOVaiTECH Ecuador</span><span class="dot">·</span>
+    <span>Foro Blockchain México</span><span class="dot">·</span>
+    <span>DCN AI for Prosperity</span><span class="dot">·</span>
+    <span>Talent Land Jalisco</span><span class="dot">·</span>
+    <span>Tulum Crypto Fest</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- KEYNOTE -->
+<section class="keynote-section" id="keynote">
+  <div class="container">
+    <div class="keynote-grid">
+      <div class="keynote-image">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Daniela Malqui">
+      </div>
+      <div>
+        <span class="keynote-tag">Signature Keynote</span>
+        <h2 class="keynote-title">The Augmented Human: What's Left for Humans When Machines Outperform Us?</h2>
+        <p class="keynote-body">Machines will surpass us in intelligence. Soon. So — what's left for us?<br><br>
+        This keynote starts from that uncomfortable question and challenges the way we think about AI, leadership, and human value. Daniela explores a dual approach to AI adoption — top-down and bottom-up — showing that sustainable transformation doesn't start with tools, but with mindset. Because people don't change because they are told to. They change when they have their own reasons to move.</p>
+        <ul class="outcomes">
+          <li>A clear realization that people are still the most valuable asset — and that AI won't replace those who have meaning and purpose in what they do.</li>
+          <li>A deeper understanding that leadership is about motivation — giving people real reasons to embrace AI.</li>
+          <li>A shift in perspective: seeing AI adoption not just as a technological challenge, but as a human and strategic one.</li>
+          <li>A practical understanding of the dual adoption model: when to use each approach, and how to make them work together.</li>
+        </ul>
+        <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker" class="btn-primary" style="display:inline-block;">Book This Keynote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WORKSHOP -->
+<section class="workshop-section" id="workshop">
+  <div class="container">
+    <div class="workshop-grid">
+      <div class="workshop-content">
+        <span class="keynote-tag" style="background:var(--plum);">Most Requested Workshop</span>
+        <h2 class="keynote-title">AI Generative Group Challenge:<br>Design, Create & Execute</h2>
+        <p class="keynote-body">Two hours. No prior training. Real tools. A product built from zero. One winning team.<br><br>
+        This is not a workshop — it's an experience. Participants are divided into teams and given a real challenge that must be solved using AI: fast, collaboratively, and without overthinking.</p>
+        <ul class="outcomes">
+          <li>Build a real AI-powered solution in under one hour.</li>
+          <li>Experience how to collaborate effectively under pressure and uncertainty.</li>
+          <li>Develop practical understanding of multiple AI tools without prior knowledge.</li>
+          <li>Gain confidence to start using AI immediately in real-world scenarios.</li>
+        </ul>
+        <p style="font-size:0.82rem;color:var(--text-light);margin-bottom:2rem;">Delivered across Argentina, Peru, Mexico, and online.</p>
+        <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker" class="btn-primary" style="display:inline-block;background:var(--plum);color:white;">Book This Workshop</a>
+      </div>
+      <div class="workshop-image">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Workshop en acción">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- GALLERY -->
+<section style="background:var(--warm-white);padding:2rem 0 1rem;">
+  <div class="container">
+    <p class="section-eyebrow">In Action</p>
+    <h2 class="section-title">On Stage &<br><em>In the Room</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:2rem;">
+      <div style="aspect-ratio:4/3;overflow:hidden;border-radius:2px;">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Talent Land México" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="aspect-ratio:4/3;overflow:hidden;border-radius:2px;">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Foro Blockchain 2025" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="aspect-ratio:4/3;overflow:hidden;border-radius:2px;">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Workshop DCN Argentina" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="aspect-ratio:4/3;overflow:hidden;border-radius:2px;">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="ADE Argentina" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="aspect-ratio:4/3;overflow:hidden;border-radius:2px;">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Tech Week México 2026" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="aspect-ratio:4/3;overflow:hidden;border-radius:2px;background:var(--forest);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;padding:2rem;">
+        <p style="font-family:Cormorant Garamond,serif;font-size:1.4rem;color:white;font-style:italic;text-align:center;line-height:1.4;">Ready to bring Daniela to your event?</p>
+        <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratar%20a%20Daniela%20como%20speaker" target="_blank" style="background:white;color:var(--forest);padding:0.7rem 1.5rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;font-family:DM Sans,sans-serif;">Book Daniela</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <p class="section-eyebrow">What People Say</p>
+    <h2 class="section-title" style="color:white;">Words From<br><em>the Room</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-quote">I had the pleasure of working with Daniela at AI for Prosperity. Participants left with practical, successful tools — a clear reflection of her expertise and energy. Highly recommend her as a facilitator who delivers impact.</p>
+        <p class="testimonial-name">Marianna Tanagia</p>
+        <p class="testimonial-role">Communications Director, DCN. August 2025</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">Working with Daniela is inspiring. She connects strategy with execution and has strong expertise in digital and AI. Her training for my team of 30+ people was a turning point — a before and after.</p>
+        <p class="testimonial-name">Ysabel Revilla Tirado</p>
+        <p class="testimonial-role">General Manager, Preciso. November 2025</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">Daniela is a great facilitator and speaker, providing valuable insights on leadership and team management. She always asks the right questions to lead us to valuable reflections.</p>
+        <p class="testimonial-name">Mariana Costa Checa</p>
+        <p class="testimonial-role">Co-Founder, Laboratoria+. August 2024</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">Daniela understands people across all cultures and functions, bringing teams together to achieve common goals. She was key to leading all strategic projects — from launch to IPO.</p>
+        <p class="testimonial-name">Shirly Kalush</p>
+        <p class="testimonial-role">CSO, GoTo Global. February 2023</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">I attended Daniela's AI workshop and found it very useful. She explained the tools in a clear and simple way, and I left with practical ideas I can use in my work immediately.</p>
+        <p class="testimonial-name">Dalia Noiman</p>
+        <p class="testimonial-role">AI Workshop Participant. February 2026</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">Daniela destaca por su capacidad para facilitar contenidos de innovación e IA de manera clara, práctica y cercana. No se queda en la teoría — logra traducir conceptos complejos en herramientas aplicables. Tiene presencia, estructura, calidez y una muy buena capacidad para guiar sesiones que generan participación real e interés genuino. La recomiendo plenamente para espacios académicos, corporativos y de comunidad.</p>
+        <p class="testimonial-name">Marco Mendieta</p>
+        <p class="testimonial-role">Founder & Director, Misión Ecuador Foundation. Chevening Scholar · Georgetown University · King's College London</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKING -->
+<section class="speaking-section" id="speaking">
+  <div class="container">
+    <p class="section-eyebrow">On Stage</p>
+    <h2 class="section-title">Speaking <em>Experience</em></h2>
+    <div class="events-grid" id="events-container">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Daniela Malqui">
+      </div>
+      <div>
+        <p class="section-eyebrow" style="color:rgba(255,255,255,0.35);">About</p>
+        <h2 class="section-title" style="color:white;"><em>Daniela</em> Malqui</h2>
+        <p class="about-body">Daniela Malqui is an international speaker, strategy and operations leader, and founder of Doing Minds — a firm focused on automation and applied AI to optimize processes and drive real execution.</p>
+        <p class="about-body">With over 13 years of experience and having lived and worked across five countries, she brings a truly global and grounded perspective shaped by working hands-on with teams, leaders, and organizations navigating change.</p>
+        <p class="about-body">Her keynote, <em>The Augmented Human</em>, starts with an uncomfortable but necessary question: what makes us truly human in a world where machines are becoming increasingly capable? Through a powerful and practical lens, Daniela introduces a dual approach to AI adoption — showing that real transformation doesn't start with tools, but with people who have a reason to move.</p>
+        <p class="about-body">She has spoken at AWSome Summit, INNOVaiTECH, Devconnect, DCN, Foro Blockchain, ETH México, Labitconf, Talent Land, and more — and has led immersive AI workshops across LATAM, training over 1,000 people in 2025. A hackathon winner and passionate educator, Daniela is recognized for turning complex ideas into experiences that shift mindset, spark action, and stay with people long after the talk ends.</p>
+        <p class="about-body">She speaks Spanish, English, and Hebrew, and is known for her ability to connect deeply with diverse audiences.</p>
+        <div class="about-tags">
+          <span class="tag">AI & Leadership</span>
+          <span class="tag">Web3</span>
+          <span class="tag">Operations</span>
+          <span class="tag">LATAM</span>
+          <span class="tag">Israel</span>
+          <span class="tag">English · Spanish · Hebrew</span>
+        </div>
+        <br>
+        <a href="https://linkedin.com/in/danielamalqui" target="_blank" class="btn-outline" style="display:inline-block;margin-top:1rem;">LinkedIn Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog-section" id="blog">
+  <div class="container">
+    <p class="section-eyebrow">Ideas & Insights</p>
+    <h2 class="section-title">From the <em>Blog</em></h2>
+    <div id="blog-container" class="blog-grid">
+      <p class="loading" style="grid-column:1/-1;color:var(--text-light);font-style:italic;">Loading posts…</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="container" style="text-align:center;">
+    <h2 class="section-title" style="color:white;text-align:center;margin:0 auto 1rem;">Ready to Bring<br><em>Daniela</em> to Your Event?</h2>
+    <p style="color:rgba(255,255,255,0.6);margin-bottom:2.5rem;font-size:1rem;">Available for keynotes, workshops, panels, and online events.</p>
+    <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker" class="btn-white">Book Daniela</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">Daniela Malqui</span>
+      <div class="footer-links">
+        <a href="#keynote">Keynote</a>
+        <a href="#workshop">Workshop</a>
+        <a href="#about">About</a>
+        <a href="#blog">Blog</a>
+        <a href="https://wa.me/525536736502?text=Hola%20Daniela%2C%20me%20interesa%20contratarte%20como%20speaker">Contact</a>
+      </div>
+      <span class="footer-copy">© 2025 Daniela Malqui</span>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── BLOG: reads from Google Sheet (CSV export) ──────────────────────────────
+// Replace SHEET_ID with your actual Google Sheet ID after setup
+const SHEET_ID = 'YOUR_SHEET_ID_HERE';
+const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv`;
+
+async function loadBlog() {
+  const container = document.getElementById('blog-container');
+
+  // Demo posts while Sheet is not yet connected
+  const demoPosts = [
+    {
+      title: 'What Happens When AI Does the Work Faster Than You Can Think',
+      date: 'March 2025',
+      image: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=70',
+      url: '#'
+    },
+    {
+      title: 'The Human Side of AI Adoption in Latin America',
+      date: 'January 2025',
+      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=70',
+      url: '#'
+    },
+    {
+      title: 'Leading Teams Through Uncertainty: What Web3 Taught Me',
+      date: 'November 2024',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=70',
+      url: '#'
+    }
+  ];
+
+  if (SHEET_ID === 'YOUR_SHEET_ID_HERE') {
+    renderPosts(demoPosts, container);
+    return;
+  }
+
+  try {
+    const res = await fetch(SHEET_URL);
+    const csv = await res.text();
+    const rows = csv.split('\n').slice(1).filter(r => r.trim());
+    const posts = rows.map(row => {
+      const cols = row.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g) || [];
+      const clean = cols.map(c => c.replace(/^"|"$/g, '').trim());
+      return { title: clean[0], date: clean[1], image: clean[2], url: clean[3] };
+    }).filter(p => p.title);
+    renderPosts(posts.slice(0, 3), container);
+  } catch(e) {
+    renderPosts(demoPosts, container);
+  }
+}
+
+function renderPosts(posts, container) {
+  container.innerHTML = posts.map(p => `
+    <a href="${p.url}" class="blog-card">
+      <div class="blog-img">
+   
